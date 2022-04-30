@@ -23,7 +23,7 @@ function sortByHeight(arr) {
   
 
 // сортируем по возрастанию
-let sort = mapped.sort(function(a, b) {
+  mapped.sort(function(a, b) {
      
     if (a.value > b.value) {
       return 1; }
@@ -35,16 +35,16 @@ let sort = mapped.sort(function(a, b) {
   });
 
 
-// Вриан 2 - разбивам на массив со значениями и массив с отсутствием значений
+// разбивам на массив со значениями и массив с отсутствием значений
 
 let numArr = []
 let noneArr = []
 
 mapped.forEach(({index, value}) => {
-   return value !==-1 ? numArr.push(value) : noneArr.push({index, value});
+   return value !== -1 ? numArr.push(value) : noneArr.push({index, value});
 });
 
-// воткнуть значения  noneArr в массив numArr по возрастаниюзначений индексов
+// воткнуть значения  noneArr в массив numArr на конкретные места по индексам noneArr
 
 noneArr.forEach(a => {
    numArr.splice(a.index, 0, a.value)
